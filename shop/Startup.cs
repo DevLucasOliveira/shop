@@ -20,7 +20,8 @@ namespace shop
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddDbContext<DataContext>(opt => opt.UseInMemoryDatabase("Database"));
+            //services.AddDbContext<DataContext>(opt => opt.UseInMemoryDatabase("Database"));
+            services.AddDbContext<DataContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("connectionString")));
             services.AddScoped<DataContext, DataContext>(); 
         
         }

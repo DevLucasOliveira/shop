@@ -7,7 +7,9 @@ namespace shop.Data
     {
         public DataContext(DbContextOptions<DataContext> options)
             : base(options)
-        { }
+        {
+           // options.u
+        }
 
         public DbSet<Product> Products { get; set; }
         public DbSet<Category> Categories { get; set; }
